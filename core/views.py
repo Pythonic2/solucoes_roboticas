@@ -8,15 +8,17 @@ from email.message import EmailMessage
 from django.views.generic import TemplateView 
 
 def enviar_email(nome,email,telefone,menssagem):
-        msg = EmailMessage()
-        msg['subject'] = f'{nome} Solicita um Orçamento.'
-        msg['From'] = 'contato@solucoesroboticas.com.br'
-        msg['To'] = settings.EMAIL_ADDRESS
-        msg.set_content(f'Requerente: {nome}.\nEmail: {email}.\nTelefone: {telefone}.\nMenssagem: {menssagem}.')
+    msg = EmailMessage()
+    msg['subject'] = f'{nome} Solicita um Orçamento.'
+    msg['From'] = 'contato@solucoesroboticas.com.br'
+    msg['To'] = settings.EMAIL_ADDRESS
+    msg.set_content(f'Requerente: {nome}.\nEmail: {email}.\nTelefone: {telefone}.\nMenssagem: {menssagem}.')
 
-        with smtplib.SMTP_SSL('mail.solucoesroboticas.com.br',465) as smtp:
-            smtp.login('contato@solucoesroboticas.com.br',settings.EMAIL_PASSWORD)
-            smtp.send_message(msg)
+    with smtplib.SMTP_SSL('mail.solucoesroboticas.com.br',465) as smtp:
+        smtp.login('contato@solucoesroboticas.com.br',settings.EMAIL_PASSWORD)
+        smtp.send_message(msg)
+
+
 class HomeView(TemplateView):
     
     template_name = "index.html"

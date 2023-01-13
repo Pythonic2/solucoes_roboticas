@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-k-%r*))_pd!59+wo=8qg7)=cg_yaxy-ai)eh@m48)=*w-r-6r!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['olucoesroboticas.com.br']
+ALLOWED_HOSTS = []
 
 
 # Application definition

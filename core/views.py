@@ -23,15 +23,11 @@ class HomeView(TemplateView):
     
     template_name = "index.html"
     
-    
-
     def get_context_data(self, **kwargs):
         kwargs['mostrar'] = 'd-none'
         kwargs['form'] = ContactForm()
         
         return super().get_context_data(**kwargs)
-    
-   
     
     def post(self,request):
         form = ContactForm(request.POST)
@@ -41,7 +37,8 @@ class HomeView(TemplateView):
             email = form['email_addres'].value()
             telefone = form['phone_number'].value()
             menssagem = form['message'].value()
-            form = ContactForm()
             enviar_email(nome,email,telefone,menssagem)
+            form = ContactForm()
+            
 
             return render(request,'index.html',{'form':form,'mostrar':'','formatarestilo':'margin-top: -10%;'})

@@ -2,13 +2,14 @@ from django import forms
 from core.models import Client
 
 class ContactForm(forms.ModelForm):
+    
     class Meta:
         model = Client
         fields = '__all__'
+        
     def __init__(self, *args, **kwargs):
         ''' remove any labels here if desired
         '''
-
         super(ContactForm, self).__init__(*args, **kwargs)
         # you can also remove labels of built-in model properties
         self.fields['full_name'].label = 'Companhia'
@@ -16,7 +17,7 @@ class ContactForm(forms.ModelForm):
         self.fields['full_name'].widget.attrs['id'] = 'name'
         self.fields['full_name'].widget.attrs['placeholder'] = 'Nome da Companhia'
 
-        #id="sel2" name="segundos"
+       
         self.fields['email_addres'].label = 'E-mail'
         self.fields['email_addres'].widget.attrs['class'] = 'form-control'
         self.fields['email_addres'].widget.attrs['id'] = 'email'
@@ -26,11 +27,10 @@ class ContactForm(forms.ModelForm):
         self.fields['phone_number'].label = 'Telefone'
         self.fields['phone_number'].widget.attrs['class'] = 'form-control'
         self.fields['phone_number'].widget.attrs['id'] = 'phone'
-        self.fields['phone_number'].widget.attrs['placeholder'] = '(123) 456-7890'
+        self.fields['phone_number'].widget.attrs['mask'] = '(123) 456-7890'
 
         self.fields['message'].label = 'Menssagem'
         self.fields['message'].widget.attrs['class'] = 'form-control'
         self.fields['message'].widget.attrs['id'] = 'message'
         self.fields['message'].widget.attrs['placeholder'] = 'Escreva sua necessidade...'
         self.fields['message'].widget.attrs['style'] = 'height: 10rem'
-

@@ -42,3 +42,43 @@ class HomeView(TemplateView):
             
 
             return render(request,'index.html',{'form':form,'mostrar':'','formatarestilo':'margin-top: -10%;'})
+class SobreView(TemplateView):
+    
+    template_name = "sobre.html"
+    def get_context_data(self, **kwargs):
+        kwargs['mostrar'] = 'd-none'
+        kwargs['form'] = ContactForm()
+        
+        return super().get_context_data(**kwargs)
+    
+    def post(self,request):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            cliente = form.save()
+            nome = form['full_name'].value()
+            email = form['email_addres'].value()
+            telefone = form['phone_number'].value()
+            menssagem = form['message'].value()
+            enviar_email(nome,email,telefone,menssagem)
+            form = ContactForm()
+
+class ServicosView(TemplateView):
+    
+    template_name = "servicos.html"
+    
+    def get_context_data(self, **kwargs):
+        kwargs['mostrar'] = 'd-none'
+        kwargs['form'] = ContactForm()
+        
+        return super().get_context_data(**kwargs)
+    
+    def post(self,request):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            cliente = form.save()
+            nome = form['full_name'].value()
+            email = form['email_addres'].value()
+            telefone = form['phone_number'].value()
+            menssagem = form['message'].value()
+            enviar_email(nome,email,telefone,menssagem)
+            form = ContactForm()

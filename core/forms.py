@@ -28,6 +28,8 @@ class ContactForm(forms.ModelForm):
         self.fields['phone_number'].widget.attrs['class'] = 'form-control'
         self.fields['phone_number'].widget.attrs['id'] = 'phone'
         self.fields['phone_number'].widget.attrs['mask'] = '(123) 456-7890'
+        self.fields['phone_number'].widget.attrs['placeholder'] = 'Telefone'
+
 
         self.fields['message'].label = 'Menssagem'
         self.fields['message'].widget.attrs['class'] = 'form-control'

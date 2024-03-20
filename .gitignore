@@ -5,3 +5,5 @@ venv
 migrations
 core/migrations
 slc_roboticas/migrations
+venv/
+**/__pycache__/

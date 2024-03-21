@@ -1,5 +1,8 @@
-<section class="alerta {{mostrar}}">
-    <div class="alert alert-success text-center" role="alert">
-        Orçamento enviado com Sucesso.
-     </div>
-</section>
+
+{%if mensagem%}
+<p class="alert alert-success text-center" role="alert">
+   {{mensagem}}
+</p>
+{%else%}
+<p></p>
+{%endif%}

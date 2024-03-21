@@ -12,7 +12,7 @@ class ContactForm(forms.ModelForm):
         '''
         super(ContactForm, self).__init__(*args, **kwargs)
         # you can also remove labels of built-in model properties
-        self.fields['full_name'].label = 'Companhia'
+        self.fields['full_name'].label = 'Nome/Empresa'
         self.fields['full_name'].widget.attrs['class'] = 'form-control'
         self.fields['full_name'].widget.attrs['id'] = 'name'
         self.fields['full_name'].widget.attrs['placeholder'] = 'Nome da Companhia'

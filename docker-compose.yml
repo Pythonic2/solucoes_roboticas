@@ -1,8 +1,9 @@
 version: '3'
 services:
   site:
-    container_name: slc-roboticas
     restart: always
+    export:
+      - 8081:8081
     build: 
       context: .
       dockerfile: Dockerfile

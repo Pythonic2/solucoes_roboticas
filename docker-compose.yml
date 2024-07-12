@@ -2,8 +2,6 @@ version: '3'
 services:
   site:
     restart: always
-    export:
-      - 8081:8081
     build: 
       context: .
       dockerfile: Dockerfile

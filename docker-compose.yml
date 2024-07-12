@@ -6,5 +6,10 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=your_secret_key
     command: >
-      bash -c "python main.py"
+      bash -c "python manage.py runserver 0.0.0.0:8000"

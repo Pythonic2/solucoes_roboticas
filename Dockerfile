@@ -4,6 +4,7 @@ FROM python:3.11
 # Set up the working directory
 WORKDIR /app
 
+EXPOSE 8000
 # Copy the requirements file to the container
 COPY requirements.txt .
 

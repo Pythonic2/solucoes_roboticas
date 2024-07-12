@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+  slc-roboticas:
     restart: always
     build: 
       context: .

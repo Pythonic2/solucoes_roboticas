@@ -9,5 +9,5 @@ services:
     ports:
       - "3000:3000"
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:3000"
+      sh -c "python manage.py runserver"
     pull_policy: build

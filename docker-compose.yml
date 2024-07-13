@@ -7,5 +7,5 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8000:81"
+      - "3000:3000"
     pull_policy: build

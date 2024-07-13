@@ -6,4 +6,6 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+    ports:
+      - "8000:81"
     pull_policy: build

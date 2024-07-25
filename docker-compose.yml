@@ -10,3 +10,10 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
     pull_policy: build
+
+    networks:
+      - cloudflare_default
+
+networks:
+  cloudflare_default:
+    external: true

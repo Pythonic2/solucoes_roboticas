@@ -80,7 +80,7 @@ body {
 }
 
 .teste,#topbar{
-  background-color:var(--bs-blue) !important;
+  background-color: white !important;
 }
 .banner{
   background-color:#1F2A37;
@@ -99,7 +99,9 @@ hr {
   border: 0;
   opacity: 0.25;
 }
-
+.nav-link,.me-lg-3{
+  color: white !important;
+}
 hr:not([size]) {
   height: 1px;
 }
@@ -4044,6 +4046,7 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  background-color:var(--bs-blue) !important;
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -4096,9 +4099,10 @@ textarea.form-control-lg {
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 1px solid white !important;
   border-radius: 0.25rem;
   transition: box-shadow 0.15s ease-in-out;
+  color: white !important;
 }
 @media (prefers-reduced-motion: reduce) {
   .navbar-toggler {
